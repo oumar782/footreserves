@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cc024281.css",
+    "main.js": "/static/js/main.03f6f01f.js",
+    "static/media/Blue And White Modern Extend a Helping Hand through Open Donations Instagram Post (1).mp4": "/static/media/Blue And White Modern Extend a Helping Hand through Open Donations Instagram Post (1).748b0be1f5cfd418d397.mp4",
+    "static/media/soccer-goal-football-green-grass-field.jpg": "/static/media/soccer-goal-football-green-grass-field.105e8630690131f6ea05.jpg",
+    "static/media/view-soccer-field-with-grass.jpg": "/static/media/view-soccer-field-with-grass.4d22f8f4a0d46746b44b.jpg",
+    "static/media/2.png": "/static/media/2.6b8599fe126be7e73042.png",
+    "static/media/3 (2).png": "/static/media/3 (2).03ab804096210f7ab52d.png",
+    "static/media/1.png": "/static/media/1.46e8fae90f81a731cda9.png",
+    "static/media/instagram.png": "/static/media/instagram.b4ff9be06a8f84fada1b.png",
+    "static/media/whatsapp.png": "/static/media/whatsapp.fdd4b7007148bcf6ce48.png",
+    "static/media/twitter.png": "/static/media/twitter.adbe7e240d61caf5d38b.png",
+    "static/media/linkedin.png": "/static/media/linkedin.032cf8a63be2f0f4d425.png",
+    "index.html": "/index.html",
+    "main.cc024281.css.map": "/static/css/main.cc024281.css.map",
+    "main.03f6f01f.js.map": "/static/js/main.03f6f01f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc024281.css",
+    "static/js/main.03f6f01f.js"
+  ]
+}
