@@ -59,7 +59,7 @@ function App() {
      <div className="banner">
   <div className="banners">
     <h2 className="text-animations">
-      Terrains de Football Professionnels <span></span>
+      Terrains de Football Professionnels pour vos <span></span>
     </h2>
   </div>
   <p className="description">
