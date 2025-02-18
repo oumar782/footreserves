@@ -1,0 +1,57 @@
+.formulaireprinc{
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  box-shadow: 0px 8px 8px rgba(8, 8, 8, 0.5);
+  margin-top: 100px;
+  margin-left: 110px;
+  display: flex;
+  flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+  gap: 20px;
+  border-radius: 20px;
+
+}
+.formulaireprinc h1{
+  color: rgb(7, 7, 7);
+  font-style: oblique;
+  text-shadow: 1px 1px 20px rgba(8, 81, 11, 0.5);
+margin-left: 400px;
+}
+.form-group{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ .form-group label{
+  color: rgb(7, 7, 7);
+  text-shadow: 1px 1px 20px rgba(8, 81, 11, 0.5);
+  font-size: 15px;
+  display: grid;
+
+}
+.form-group input{
+  background-color: white;
+  width: 600px;
+  color: black;
+}
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+.auto-filled {
+  background-color: #ffcccc; /* Rouge clair */
+  border: 2px solid red;
+  color: black;
+  font-weight: bold;
+}

@@ -6,26 +6,13 @@ import Terrains from "../src/pages/Terrains.jsx";
 import Reservation from "../src/pages/Reservation.jsx";
 import Paiement from './pages/paiement.jsx';
 import Contact from "../src/contacts/Contact.jsx";  // Pas besoin de l'extension .jsx
-
-
- 
 import Creneaux from './pages/creneaux.jsx';  
+import Reserveterr from './pages/Reserveterr.jsx';  
 
 
-import axios from 'axios';
 
 const App = () => {
-  useEffect(() => {
-    // Effectuer une requête GET vers le backend pour récupérer des données
-    axios.get('http://localhost:5000')  // Adresse de ton backend (assure-toi qu'il fonctionne)
-      .then(response => {
-        console.log(response.data);  // Affiche la réponse du backend dans la console
-      })
-      .catch(error => {
-        console.error('Il y a eu une erreur!', error);  // Si erreur, l'afficher
-      });
-  }, []);  // Le tableau vide [] signifie que ce code s'exécute uniquement au chargement initial
-
+  
   return (
     <div className="App">
       
@@ -39,6 +26,9 @@ const App = () => {
             <Route path="/paiement" element={<Paiement />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/creneaux" element={<Creneaux />} />
+            <Route path="/reserve" element={<Reserveterr />} />
+
+            
           </Routes>
         </div>
       </Router>
