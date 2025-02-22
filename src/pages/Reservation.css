@@ -1,3 +1,6 @@
+html, body {
+    height: 100%;
+}
 .reservations {
     margin: 0;
     padding: 0;
@@ -7,6 +10,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly */
 }
 .error-box {
     position: fixed;
@@ -21,45 +28,49 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+}
   
-  .error-box button {
+.error-box button {
     background: none;
     border: none;
     color: #c62828;
     font-size: 16px;
     cursor: pointer;
-  }
+}
   
-  .error-box button:hover {
+.error-box button:hover {
     color: #b71c1c;
-  }
+}
 .reservation {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.degrade h1 {
+.degrades h1 {
+    position: relative;
+    display: inline-block;
     text-align: center;
-    font-size: 2rem; /* Use relative units */
+    font-size: 2rem;
     color: white;
-    text-shadow: 5px 5px rgba(2, 8, 2, 0.5);
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeInUp 5s forwards;
+    text-shadow: 4px 10px 10px rgba(2, 8, 2, 0.7); /* Ombre ajustée */
+    opacity: 1; /* Assure que le texte est toujours visible */
+    transform: translateY(0);
+    animation: wavingFlag 3s infinite ease-in-out; /* Animation continue */
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Effet de drapeau flottant continu */
+@keyframes wavingFlag {
+    0% { transform: rotate(0deg) translateY(-4px); }
+    25% { transform: rotate(2deg) translateY(4px); }
+    50% { transform: rotate(0deg) translateY(-4px); }
+    75% { transform: rotate(-2deg) translateY(4px); }
+    100% { transform: rotate(0deg) translateY(-4px); }
 }
+
+
 
 .bg {
     color: black;
@@ -68,19 +79,21 @@
 .degrades {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(128, 128, 128, 0.3));
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    height: 550px;
-    margin: 120px auto 0; 
-    margin-top: 10px ; /* Center horizontally and add top margin */
-
-    border-radius: 15px;
-    overflow: hidden;
+    width: 90%; /* Reduced width from 90% to 80% */
+    height: 608px; /* Reduced height from 100px to 80px */
+    margin: 10px auto 0; 
+    margin-top: 110px; 
+    flex-grow: 0; /* Allow it to grow and fill available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 55px;
 }
 
 .reservation-containers {
     max-width: 800px;
-    margin-left: 20px ;
-    margin-top: -20px ;
+    margin-left: 20px;
+    margin-top: -20px;
     padding: 20px;
     border: 1px solid green;
     border-radius: 8px;
@@ -105,7 +118,7 @@
 .reservation-forms input,
 .reservation-forms select {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 8px 4px;
     background: linear-gradient(-50deg, rgba(24, 13, 13, 0.8), rgba(128, 128, 128, 0.3));
     backdrop-filter: blur(10px);
     color: aliceblue;
@@ -114,6 +127,7 @@
     border-radius: 18px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
     font-size: 1rem;
+    width: 350px; /* Réduction de la largeur */
 }
 
 .reservation-forms button {
@@ -127,7 +141,6 @@
     max-width: 200px; /* Limit button width */
     margin: 0 auto;
     box-shadow: 0px 2px 2px rgba(235, 238, 235, 0.5);
-   
 }
 
 .reservation-forms button:hover {
@@ -200,12 +213,12 @@
     }
 }
 
-.dispo{
+.dispo {
     background: #000;
 }
-ul{
+ul {
     color: #000;
 }
-li{
+li {
     color: #000;
 }

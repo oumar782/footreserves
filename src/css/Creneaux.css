@@ -1,4 +1,17 @@
-/* Conteneur principal */
+.head{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto; /* Allow scrolling */
+  background-image: url('../assets/Image/soccer-goal-football-green-grass-field.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space evenly */
+}
 .creneaux-container {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(128, 128, 128, 0.3));
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
@@ -16,8 +29,14 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem; /* Taille de police relative */
+    text-shadow: 4px 10px 10px rgba(1, 67, 1, 0.7); /* Ombre ajustée */
+
   }
-  
+  strong{
+    font-size: 20px;
+    color: #33d862;
+
+  }
   /* Carte de créneau */
   .creneau-card {
     border: 1px solid #044f19;
@@ -36,11 +55,19 @@
   }
   
   /* Informations du créneau */
-  .creneau-info p {
-    margin: 5px 0;
-    font-size: 1rem; /* Taille de police relative */
+ .creneau-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap between items as needed */
+    text-align: center;
   }
-  
+
+  .creneau-info p {
+    flex: 1 1 calc(50% - 10px); /* Adjusts the width to align two per row */
+    box-sizing: border-box;
+    font-size: 20px;
+
+  }
   /* Bouton Réserver */
   .reserve-button {
     background-color: #4caf50;

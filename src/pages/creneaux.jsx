@@ -1,8 +1,10 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import '../css/Creneaux.css'; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from '../composant/Header';
 import Footer from '../composant/Footer';
+import '../css/Creneaux.css';
 
 const Creneaux = () => {
   const location = useLocation();
@@ -11,22 +13,29 @@ const Creneaux = () => {
 
   const handleReservation = (creneau) => {
     console.log('Réservation du créneau :', creneau);
-    alert(`Créneau disponible ! Veuillez finaliser votre réservation.`);
-
+    toast.success('Créneau disponible ! Veuillez finaliser votre réservation.');
     navigate('/reserve', { state: { creneau } });
+  };
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
   };
 
   return (
     <div className='head'>
-      <Header/>
+      <Header />
+      <ToastContainer />
       <div className="creneaux-container">
-        <h1>Créneaux disponibles</h1>
+        <h1>Les Créneaux disponibles le {creneaux.length > 0 ? formatDate(creneaux[0].datecreneaux ) : 'Aucune date disponible'}</h1>
         {creneaux.length > 0 ? (
           creneaux.map((creneau, index) => (
             <div key={index} className="creneau-card">
               <div className="creneau-info">
-              <p><strong>Date :</strong> {creneau.datecreneaux}</p>
-
+                <p><strong>Date :</strong> {formatDate(creneau.datecreneaux)}</p>
                 <p><strong>Heure début :</strong> {creneau.heure}</p>
                 <p><strong>Heure fin :</strong> {creneau.heurefin}</p>
                 <p><strong>Terrain :</strong> {creneau.typeTerrain}</p>
@@ -48,7 +57,7 @@ const Creneaux = () => {
           <p>Aucun créneau disponible.</p>
         )}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

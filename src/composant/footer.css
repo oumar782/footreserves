@@ -1,40 +1,72 @@
 footer {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(128, 128, 128, 0.3));
   color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   width: 100%;
-  padding: 40px 0;
+  padding: 4px 0;
+  margin-top: 25px;
+  
+}
+.brand-nam{
+  color: green;
+}
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-footer .footer-content .footer-top .brand-logo {
+footer .footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer .brand-logo {
   font-size: 30px;
   color: #fff;
+  font-weight: bold;
+}
+
+footer .social-icons {
+  display: flex;
+  align-items: center;
 }
 
 footer .social-icons a {
   margin: 0 10px;
-  color: #fff;
+  color: black;
   transition: all 0.4s ease;
+  font-size: 20px;
 }
 
 footer .social-icons a:hover {
-  color: #4CAF50; /* Change color on hover */
+  color: #4CAF50;
 }
 
-footer .footer-content .footer-links {
+footer .footer-links {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 footer .footer-section {
   list-style: none;
   padding: 0;
+  margin: 10px 0;
+  flex: 1;
+  min-width: 200px;
 }
 
-footer .footer-section .section-title {
+footer .section-title {
   font-size: 18px;
-  color: #fff;
+  color: black;
   margin-bottom: 10px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 5px;
 }
 
 footer .footer-section li a {
@@ -51,40 +83,43 @@ footer .footer-section li a:hover {
 }
 
 footer .footer-bottom {
-  background: #0F0844;
+  background: #035118;
   padding: 20px;
   text-align: center;
+  border-top: 1px solid #4CAF50;
+  margin-top: 80px;
 }
 
-footer .footer-bottom .bottom-text {
+footer .bottom-text {
   display: flex;
   justify-content: space-between;
-  color: #fff;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-footer .footer-bottom .bottom-text a {
+footer .bottom-text a {
   font-size: 14px;
   color: #fff;
   text-decoration: none;
 }
 
-footer .footer-bottom .bottom-text a:hover {
+footer .bottom-text a:hover {
   opacity: 1;
   text-decoration: underline;
 }
 
 @media (max-width: 900px) {
-  footer .footer-content .footer-links {
+  footer .footer-links {
     flex-wrap: wrap;
   }
-  footer .footer-content .footer-links .footer-section {
+  footer .footer-section {
     width: 100%;
     margin-top: 10px;
   }
 }
 
 @media (max-width: 700px) {
-  footer .footer-content .footer-top .social-icons a {
+  footer .social-icons a {
     height: 35px;
     width: 35px;
     font-size: 14px;

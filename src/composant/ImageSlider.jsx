@@ -22,11 +22,11 @@ const ImageSlider = () => {
           <p>Réservez facilement les meilleurs terrains de football à proximité. Profitez d’un service rapide, fiable et adapté à vos besoins, que vous soyez amateur ou professionnel. Découvrez une nouvelle façon de jouer, avec des installations de qualité et des expériences inoubliables.</p>
         </div>
         <div className="ok">
-          <a style={{ backgroundColor: 'rgba(0, 128, 0, 0.5)', backdropFilter: 'blur(10px)' }} href="#services">
-            Nos Services
+          <a style={{ backgroundColor: 'rgba(0, 128, 0, 0.5)', backdropFilter: 'blur(10px)' }} href="/reservation">
+            Reserver maintenant
           </a>
-          <a style={{ backgroundColor: 'rgba(8, 8, 8, 0.5)', backdropFilter: 'blur(10px)' }} href="#contact">
-            Contact
+          <a style={{ backgroundColor: 'rgba(8, 8, 8, 0.5)', backdropFilter: 'blur(10px)' }} href="/contact">
+            Contactez-nous!
           </a>
         </div>
         <div className="oui">

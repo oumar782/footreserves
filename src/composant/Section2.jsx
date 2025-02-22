@@ -1,7 +1,10 @@
-
+import React from 'react';
 import "../css/Section2.css";
+import { useNavigate } from 'react-router-dom';
 
 const Section2 = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="section-container">
       <div className="section-header">
@@ -20,7 +23,7 @@ const Section2 = () => {
           <p className="cardsss-description">Une attention aux détails qui fait toute la différence.</p>
         </div>
       </div>
-      <button className="cta-button">Reserver maintenant</button>
+      <button className="cta-button" onClick={() => navigate('/reservation')}>Reserver maintenant</button>
     </section>
   );
 };

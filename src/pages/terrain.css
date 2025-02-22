@@ -190,7 +190,8 @@ body {
   color: white;
   border: none;
   margin-right: 10px;
-  font-style: oblique;
+  padding: 10px 10px;
+  
 }
 
 .card .reserve:hover {

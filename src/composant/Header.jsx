@@ -25,7 +25,7 @@ const Header = () => {
         </div>
 
         <div className={`links ${isMenuActive ? 'active' : ''}`}>
-          <a href="/about" id="about">À propos</a>
+          <a href="/homes" id="about">À propos</a>
           <a href="/terrains" >Nos terrains</a>
           <a href="/reservation">Réservation</a>
           <a href="/contact">Contact</a>

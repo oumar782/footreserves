@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './Reservation.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from "../composant/Header";
-
+import Footer from "../composant/Footer";
 const Reservation = () => {
   const [date, setDate] = useState('');
   const [terrainType, setTerrainType] = useState('');
   const [surface, setSurface] = useState('');
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
 
     console.log('🔍 Données envoyées:', { date, terrainType, surface });
 
@@ -25,18 +24,24 @@ const Reservation = () => {
       console.log('✅ Réponse du serveur:', response.data);
 
       if (response.data.length > 0) {
-        navigate('/creneaux', { state: { creneaux: response.data } });
+        toast.success('Créneaux disponibles trouvés!');
+  
+        // Introduire un délai avant de rediriger
+        setTimeout(() => {
+          navigate('/creneaux', { state: { creneaux: response.data } });
+        }, 1500); // Délai de 1.5 seconde pour afficher la notification
       } else {
-        setError('Aucun créneau disponible pour cette date et ce terrain.');
+        toast.error('Aucun créneau disponible pour cette date et ce terrain.');
       }
+    
     } catch (err) {
       console.error('❌ Erreur lors de la récupération des créneaux:', err);
       if (err.response) {
-        setError(`Erreur serveur: ${err.response.data.message || 'Erreur inconnue'}`);
+        toast.error(`Erreur serveur: ${err.response.data.message || 'Erreur inconnue'}`);
       } else if (err.request) {
-        setError('Aucune réponse du serveur. Vérifiez votre connexion.');
+        toast.error('Aucune réponse du serveur. Vérifiez votre connexion.');
       } else {
-        setError(`Erreur inconnue: ${err.message}`);
+        toast.error(`Erreur inconnue: ${err.message}`);
       }
     }
   };
@@ -44,37 +49,33 @@ const Reservation = () => {
   return (
     <div className="reservations">
       <Header />
-      <div className="bouton">
-        <Link to="/reservation" className="btn">Je consulte le créneau</Link>
-        <Link to="/paiement" className="btn">Je paie ma réservation</Link>
-        <Link to="/reserve" className="btn">Je consulte ma réservation</Link>
-      </div>
+      <ToastContainer />
       <div className="degrades">
         <h1>Réservez votre espace de foot en quelques clics et en toute sérénité</h1>
         <div className="reservation-containers">
-          <h1>Faites-vous plaisir ! Réservez Votre Terrain</h1>
-          <form onSubmit={handleSubmit} className="reservation-forms">
+          <h1>Faites-vous plaisir ! Réservez Votre Terrain.</h1>
+          <form onSubmit={handleSubmit} className="reservation-forms" style={{ marginBottom: '0' }}>
             <label>
               Date :
-              <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
             </label>
+            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
             <label>
               Type de terrain :
-              <select value={terrainType} onChange={(e) => setTerrainType(e.target.value)} required>
-                <option value="">Veuillez sélectionner le type de terrain</option>
-                <option value="normal">Normal</option>
-                <option value="synthetique">Synthétique</option>
-              </select>
             </label>
+            <select value={terrainType} onChange={(e) => setTerrainType(e.target.value)} required>
+              <option value="">Veuillez sélectionner le type de terrain</option>
+              <option value="normal">Normal</option>
+              <option value="synthetique">Synthétique</option>
+            </select>
             <label>
-              Surface du terrain :
-              <select value={surface} onChange={(e) => setSurface(e.target.value)} required>
-                <option value="">Veuillez sélectionner la surface du terrain</option>
-                <option value="7X7">7X7</option>
-                <option value="9X9">9X9</option>
-                <option value="11X11">11X11</option>
-              </select>
+              Surface du terrain : 
             </label>
+            <select value={surface} onChange={(e) => setSurface(e.target.value)} required>
+              <option value="">Veuillez sélectionner la surface du terrain</option>
+              <option value="7X7">7X7</option>
+              <option value="9X9">9X9</option>
+              <option value="11X11">11X11</option>
+            </select>
             <button type="submit">Voir les créneaux</button>
           </form>
           <div className="reservation-infos">
@@ -85,7 +86,7 @@ const Reservation = () => {
           </div>
         </div>
       </div>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <Footer/>
     </div>
   );
 };

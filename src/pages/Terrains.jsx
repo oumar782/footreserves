@@ -1,7 +1,8 @@
-
-import "./terrain.css";
-import Header from "../composant/Header.jsx";
-import Footer from "../composant/Footer.jsx";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from '../composant/Header.jsx';
+import Footer from '../composant/Footer.jsx';
+import './terrain.css';
 
 const Terrains = [
   {
@@ -53,27 +54,26 @@ const services = [
 ];
 
 function App() {
+  const navigate = useNavigate();
+
   return (
     <div>
-     <Header/>
-     <div className="banner">
-  <div className="banners">
-    <h2 className="text-animations">
-      Terrains de Football Professionnels pour vos <span></span>
-    </h2>
-  </div>
-  <p className="description">
-    Des installations haut de gamme pour vos matchs et entraînements
-  </p>
-</div>
-
-
-   
+      <Header />
+      <div className="banner">
+        <div className="banners">
+          <h2 className="text-animations">
+            Terrains de Football Professionnels pour vos <span>événements</span>
+          </h2>
+        </div>
+        <p className="description">
+          Des installations haut de gamme pour vos matchs et entraînements
+        </p>
+      </div>
 
       <main>
-      <h2 className="textp">
-      Nos Terrains de Football de <span> qualite </span>
-    </h2>
+        <h2 className="textp">
+          Nos Terrains de Football de <span>qualité</span>
+        </h2>
         <div className="terrain-list">
           {Terrains.map((terrain) => (
             <div key={terrain.id} className="card">
@@ -94,7 +94,7 @@ function App() {
                   ))}
                 </div>
                 <div>
-                  <button className="reserve">Réserver maintenant</button>
+                  <button className="reserve" onClick={() => navigate('/reservation')}>Réserver maintenant</button>
                   <button className="info-btn">Plus d'informations</button>
                 </div>
               </div>
@@ -117,7 +117,7 @@ function App() {
         </section>
       </main>
 
-     <Footer/>
+      <Footer />
     </div>
   );
 }
